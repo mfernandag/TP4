@@ -1,4 +1,4 @@
-
+// Funcion de modal
 const toggleModal = () => { 
     let modal = document.getElementById('modalContainer');
     modal.classList.toggle('hidden')
