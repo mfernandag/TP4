@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/main.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
     <title>Employees Data</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <header>
             <h1 class="title">Manage Employees</h1>
             <div>
-                <a class="addEmployeeBtn">
+                <a class="addEmployeeBtn" onclick="toggleModal()">
                     <img class="plusIcon" href="#" src="images/plusIcon.png">
                     <span>Add new employee</span>
                 </a>
@@ -54,11 +55,12 @@
         </div>
     </div>
     <!--Container para el modal-->
-    <div id="modalContainer"> 
+    <div id="modalContainer" class="hidden"> 
         <div id="modalContent">
             <form>
                 <div id="modalHeader">
                     <h4> Add Employee</h4>
+                    <a href="#" class="close" onclick="toggleModal()"> Cerrar </a>
 
                 </div>
                 <div id="modalBody">
