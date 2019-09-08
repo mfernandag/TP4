@@ -20,8 +20,10 @@ section, summary, time, mark, audio, video {
 
 body{
     font-family: 'Varela Round', sans-serif;
-    background-color: #F0F0F0;
-    color: white;
+    background-image: url('../images/universe.jpg');
+    //filter: brightness(0.30);
+    background-color: black;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,47 +31,111 @@ body{
 }
 
 .container{
-    background-color: black;
-    margin-top: 4%;
+    background-color: #F0F0F0;
+    margin-top: 5%;
+    margin-bottom: 50px;
     width: 90%;
     header{
+        width: 100%;
         .titleWraper{
-        background: linear-gradient(#DD0056, #DE00BD);
-        height: 60px;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        padding: 0px 20px;
-        .titleDiv{
-            width: 50%;
-            .title{
-                float: left;
-                font-size: 28px;
-            }
-        }
-        .addEmployee{
-            width: 50%;
+            background: linear-gradient(#DD0056, #DE00BD);
+            height: 65px;
             display: flex;
-            justify-content: flex-end;
-            .addEmployeeBtn{
-                float: right;
-                background: black;
-                padding: 8px 15px;
-                border-radius: 2px;
-                color: white;
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                .plusIcon{
-                    margin-right: 5px;
-                    width: 22px;
+            text-align: center;
+            align-items: center;
+            padding: 0px 20px;
+            .titleDiv{
+                width: 50%;
+                .title{
+                    float: left;
+                    font-size: 28px;
+                    color: white;
                 }
-                &:hover{
-                    border: 2px solid #00DDBF;
-                    transition: 0.3s;
+            }
+            .addEmployee{
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+                .addEmployeeBtn{
+                    float: right;
+                    background: black;
+                    padding: 8px 15px;
+                    border-radius: 2px;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    .plusIcon{
+                        margin-right: 10px;
+                        width: 22px;
+                    }
+                    &:hover{
+                        border: 1.5px solid #00DDBF;
+                    }
                 }
             }
         }
+    }
+}
+
+.inputDiv{
+    form{
+        margin-top: 35px;
+        margin-right: 20px;
+        .filterInput{
+            float: right;
+            width: 40%;
+            font-size: 15px;
+            padding: 10px 15px;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}
+
+.tableContainer{
+    margin-top: 12%;
+    margin-bottom: 5%;
+    padding-left: 25px;
+    padding-right: 25px;
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        thead{
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid #c6c3bd;
+            th{
+                padding-bottom: 10px;
+                text-align: left;
+            }
+        }
+        th:first-child{
+            width: 60px;
+            text-align: center;
+        }
+        th:last-child{
+            width: 100px;
+        }
+        tbody{
+            font-size: 14px;
+            &:hover{
+                background-color: #ccf1f2;
+            }
+            td{
+                padding: 15px 0px;
+                border-bottom: 1px solid #c6c3bd;
+                text-align: left;
+                &:first-child{
+                    width: 60px;
+                    text-align: center;
+                }
+                .tableIcons{
+                    width: 20px;
+                    padding: 0px 5px;
+                }
+            }
         }
     }
 }

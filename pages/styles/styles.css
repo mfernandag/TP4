@@ -40,8 +40,9 @@ section, summary, time, mark, audio, video {
 
 body {
   font-family: 'Varela Round', sans-serif;
-  background-color: #F0F0F0;
-  color: white;
+  background-image: url("../images/universe.jpg");
+  background-color: black;
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,15 +56,20 @@ body {
 }
 
 .container {
-  background-color: black;
-  margin-top: 4%;
+  background-color: #F0F0F0;
+  margin-top: 5%;
+  margin-bottom: 50px;
   width: 90%;
+}
+
+.container header {
+  width: 100%;
 }
 
 .container header .titleWraper {
   background: -webkit-gradient(linear, left top, left bottom, from(#DD0056), to(#DE00BD));
   background: linear-gradient(#DD0056, #DE00BD);
-  height: 60px;
+  height: 65px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,6 +87,7 @@ body {
 .container header .titleWraper .titleDiv .title {
   float: left;
   font-size: 28px;
+  color: white;
 }
 
 .container header .titleWraper .addEmployee {
@@ -109,13 +116,83 @@ body {
 }
 
 .container header .titleWraper .addEmployee .addEmployeeBtn .plusIcon {
-  margin-right: 5px;
+  margin-right: 10px;
   width: 22px;
 }
 
 .container header .titleWraper .addEmployee .addEmployeeBtn:hover {
-  border: 2px solid #00DDBF;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  border: 1.5px solid #00DDBF;
+}
+
+.inputDiv form {
+  margin-top: 35px;
+  margin-right: 20px;
+}
+
+.inputDiv form .filterInput {
+  float: right;
+  width: 40%;
+  font-size: 15px;
+  padding: 10px 15px;
+}
+
+.inputDiv form .filterInput:focus {
+  outline: none;
+}
+
+.tableContainer {
+  margin-top: 12%;
+  margin-bottom: 5%;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableContainer table thead {
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #c6c3bd;
+}
+
+.tableContainer table thead th {
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.tableContainer table th:first-child {
+  width: 60px;
+  text-align: center;
+}
+
+.tableContainer table th:last-child {
+  width: 100px;
+}
+
+.tableContainer table tbody {
+  font-size: 14px;
+}
+
+.tableContainer table tbody:hover {
+  background-color: #ccf1f2;
+}
+
+.tableContainer table tbody td {
+  padding: 15px 0px;
+  border-bottom: 1px solid #c6c3bd;
+  text-align: left;
+}
+
+.tableContainer table tbody td:first-child {
+  width: 60px;
+  text-align: center;
+}
+
+.tableContainer table tbody td .tableIcons {
+  width: 20px;
+  padding: 0px 5px;
 }
 /*# sourceMappingURL=styles.css.map */
