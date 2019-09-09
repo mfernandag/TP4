@@ -24,8 +24,8 @@
             <input class="filterInput" type="text" placeholder="Filter...">
         </div>
         <div>
-            <table class="employeesTable">
-                <thead>
+            <table class="employeesTable" id="employeeTable">
+                <thead id="tableHead">
                     <tr>
                         <th>
                             <input type="checkbox">
@@ -37,7 +37,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tableBody">
                     <tr>
                         <td>
                             <input type="checkbox">
@@ -86,6 +86,7 @@
                 <div id="modalFooter">
                     <input type="button" value="Cancel">
                     <input type="button" value="Add">
+                    <!-- recordar agregar un onclick en add para que appendee los elementos a la tabla-->
 
                 </div>
             </form>

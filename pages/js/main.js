@@ -7,3 +7,6 @@ const toggleModal = () => {
     }
 }
 
+// Crear las tablas dinamicamente
+
+
