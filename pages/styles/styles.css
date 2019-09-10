@@ -8,7 +8,8 @@
 
 #modalContainer {
   width: 100%;
-  background-color: white;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
   position: fixed;
   overflow: auto;
   top: 0;
@@ -18,6 +19,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#modalContainer .modalContent {
+  width: 400px;
+  height: 500px;
+  background-color: black;
+  color: white;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -81,7 +94,7 @@ body {
 }
 
 .container header .titleWraper .titleDiv {
-  width: 50%;
+  width: 80%;
 }
 
 .container header .titleWraper .titleDiv .title {
@@ -106,7 +119,7 @@ body {
   float: right;
   background: black;
   padding: 8px 15px;
-  border-radius: 2px;
+  border-radius: 4px;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
