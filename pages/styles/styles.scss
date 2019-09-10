@@ -38,18 +38,21 @@ body{
     header{
         width: 100%;
         .titleWraper{
-            background: linear-gradient(#DD0056, #DE00BD);
-            height: 65px;
+            background: linear-gradient(to right, #582066, #00CF95);
+            height: 70px;
             display: flex;
             text-align: center;
             align-items: center;
-            padding: 0px 20px;
+            padding: 0px 40px;
             .titleDiv{
                 width: 50%;
                 .title{
                     float: left;
                     font-size: 28px;
                     color: white;
+                    text-shadow: 3px 3px 5px #000000;
+                    //letter-spacing: 1px;
+                    word-spacing: 4px;
                 }
             }
             .addEmployee{
@@ -70,7 +73,7 @@ body{
                         width: 22px;
                     }
                     &:hover{
-                        border: 1.5px solid #00DDBF;
+                        background-color: #47416F;
                     }
                 }
             }
@@ -121,7 +124,7 @@ body{
         tbody{
             font-size: 14px;
             &:hover{
-                background-color: #ccf1f2;
+                background-color: #d6d6d6;
             }
             td{
                 padding: 15px 0px;

@@ -67,9 +67,9 @@ body {
 }
 
 .container header .titleWraper {
-  background: -webkit-gradient(linear, left top, left bottom, from(#DD0056), to(#DE00BD));
-  background: linear-gradient(#DD0056, #DE00BD);
-  height: 65px;
+  background: -webkit-gradient(linear, left top, right top, from(#582066), to(#00CF95));
+  background: linear-gradient(to right, #582066, #00CF95);
+  height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,7 +77,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0px 20px;
+  padding: 0px 40px;
 }
 
 .container header .titleWraper .titleDiv {
@@ -88,6 +88,8 @@ body {
   float: left;
   font-size: 28px;
   color: white;
+  text-shadow: 3px 3px 5px #000000;
+  word-spacing: 4px;
 }
 
 .container header .titleWraper .addEmployee {
@@ -121,7 +123,7 @@ body {
 }
 
 .container header .titleWraper .addEmployee .addEmployeeBtn:hover {
-  border: 1.5px solid #00DDBF;
+  background-color: #47416F;
 }
 
 .inputDiv form {
@@ -177,7 +179,7 @@ body {
 }
 
 .tableContainer table tbody:hover {
-  background-color: #ccf1f2;
+  background-color: #d6d6d6;
 }
 
 .tableContainer table tbody td {
