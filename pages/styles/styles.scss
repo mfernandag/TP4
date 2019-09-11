@@ -21,7 +21,6 @@ section, summary, time, mark, audio, video {
 body{
     font-family: 'Varela Round', sans-serif;
     background-image: url('../images/universe.jpg');
-    //filter: brightness(0.30);
     background-color: black;
     color: black;
     display: flex;
@@ -67,6 +66,7 @@ body{
                     display: flex;
                     justify-content: center;
                     text-align: center;
+                    text-decoration: none;
                     .plusIcon{
                         margin-right: 10px;
                         width: 22px;

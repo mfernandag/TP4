@@ -6,23 +6,111 @@
     visibility: visible;
 }
 
+@mixin modal-buttons{
+    padding: 10px 30px;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    &:focus{
+        outline: 0;
+    }
+}
+
 #modalContainer {
     width: 100%;
     height: 100vh;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(76,76,76,0.8);
     position: fixed;
     overflow: auto;
     top: 0;
-    justify-content: center;
-    align-items: center;
+    animation: slide-in-top 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+    @keyframes slide-in-top {
+        0% {
+            -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
     .modalContent{
-        width: 400px;
-        height: 500px;
-        background-color: black;
-        color: white;
+        width: 420px;
+        height: 490px;
+        background-image: url('../images/universe.jpg');
+        color: black;
+        border-radius: 4px;
         position: relative;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        box-shadow: 3px 5px 16px 5px rgba(0,0,0,0.7);
+        .modalHeader{
+            padding: 22px 25px 22px 25px;
+            height: 20px;
+            .modalTitle{
+                float: left;
+                color: white;
+                font-size: 22px;
+            }
+            .close{
+                float: right;
+                color: #959595;
+                &:hover{
+                    color: #19d39f;
+                }
+            }
+        }
+        .modalBody{
+            padding: 0px 20px 30px 25px;
+            border-top: 1px solid grey;
+            border-bottom: 1px solid grey;
+            background-color: rgba(38,38,38,0.9);
+            .formGroup{
+                margin-top: 15px;
+                label{
+                    float: left;
+                    margin-bottom: 5px;
+                    color: white;
+                }
+                input{
+                    width: 95%;
+                    padding: 10px;
+                    &:focus{
+                        outline: none;
+                        background-color: #ccbcd1;
+                    }
+                }
+            }
+        }
+        .modalFooter{
+            padding: 20px 0px 0px 0px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            .cancelBtn{
+                @include modal-buttons();
+                background-color: #868686;
+                &:hover{
+                    background-color: #683675;
+                    transition: all 0.4s ease 0s;
+                }
+            }
+            .addBtn{
+                @include modal-buttons();
+                background-color: #1C9886;
+                &:hover{
+                    background-color: #683675;
+                    transition: all 0.4s ease 0s;
+                    letter-spacing: 1px;
+                }
+            }
+        }
     }
 }
