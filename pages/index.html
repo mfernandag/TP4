@@ -31,7 +31,7 @@
             </form>
         </div>
         <div class="tableContainer">
-            <table class="employeesTable">
+            <table class="employeesTable" id="table">
                 <thead>
                     <tr>
                         <th>
@@ -75,26 +75,36 @@
                 </div>
                 <div id="modalBody" class="modalBody">
                     <div class="formGroup">
-                        <label> Name </label>
-                        <input type="text" id="name">
+                        <form>
+                            <label> Name </label>
+                            <input type="text" name="empName" id="name" required>
+                        </form>
                     </div>
                     <div class="formGroup">
-                         <label> Email </label>
-                         <input type="email" id="email">
+                        <form>
+                            <label> Email </label>
+                            <input type="email" name="empEmail" id="email" required>
+                        </form>
                     </div>
                     <div class="formGroup">
+                        <form>
                             <label> Adress </label>
-                            <input type="text" id="adress">
+                            <input type="text" name="empAdress" id="adress" required>
+                        </form>
                     </div>
                     <div class="formGroup">
+                        <form>
                             <label> Phone </label>
-                            <input type="text" id="phone">
+                            <input type="text" name="empPhone" id="phone" required>
+                        </form>
                     </div>
 
                 </div>
                 <div id="modalFooter" class="modalFooter">
-                    <input type="button" value="Cancel" class="cancelBtn" onclick="toggleModal()">
-                    <input type="button" value="Add" class="addBtn">
+                    <form>
+                        <input type="button" value="Cancel" class="cancelBtn" onclick="toggleModal()">
+                        <input type="submit" value="Add" class="addBtn" onclick="getModalValues()">
+                    </form>
                 </div>
             </form>
 

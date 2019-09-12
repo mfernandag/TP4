@@ -33,7 +33,7 @@ body{
     background-color: #F0F0F0;
     margin-top: 5%;
     margin-bottom: 50px;
-    width: 90%;
+    width: 85%;
     header{
         width: 100%;
         .titleWraper{
@@ -83,14 +83,16 @@ body{
 .inputDiv{
     form{
         margin-top: 35px;
-        margin-right: 20px;
+        margin-right: 30px;
         .filterInput{
             float: right;
-            width: 40%;
+            width: 12%;
             font-size: 15px;
             padding: 10px 15px;
+            transition: width 0.5s ease-in-out;
             &:focus{
                 outline: none;
+                width: 40%
             }
         }
     }
@@ -118,7 +120,7 @@ body{
             text-align: center;
         }
         th:last-child{
-            width: 100px;
+            width: 70px;
         }
         tbody{
             font-size: 14px;
@@ -132,6 +134,9 @@ body{
                 &:first-child{
                     width: 60px;
                     text-align: center;
+                }
+                &:last-child{
+                    width: 70px;
                 }
                 .tableIcons{
                     width: 20px;
