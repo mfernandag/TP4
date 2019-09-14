@@ -1,4 +1,3 @@
-let newEmployee = []
 
 // Funcion de modal
 const toggleModal = () => { 
@@ -10,13 +9,17 @@ const toggleModal = () => {
 }
 
 const getModalValues = () => {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const adress = document.getElementById('adress').value;
-    const phone = document.getElementById('phone').value
-    let modalFullData = {'name': name, 'email': email, 'adress': adress, 'phone': phone};
-    newEmployee.push(modalFullData)
-    console.log(newEmployee)
+    const userName = document.getElementById('name');
+    const userEmail = document.getElementById('email');
+    const userAdress = document.getElementById('adress');
+    const userPhone = document.getElementById('phone');
+    let modalFullData = {
+        'name': userName.value,
+        'email': userEmail.value,
+        'adress': userAdress.value,
+        'phone': userPhone.value
+    };
+    console.log(modalFullData)
     toggleModal()
 }
 
