@@ -1,0 +1,25 @@
+{
+  "name": "tp4-conifer",
+  "version": "1.0.0",
+  "description": "Node/Express TP4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfernandag/TP4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfernandag/TP4/issues"
+  },
+  "homepage": "https://github.com/mfernandag/TP4#readme",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "morgan": "1.9.1"
+  }
+}

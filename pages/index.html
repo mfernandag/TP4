@@ -6,26 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/main.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    <link rel='icon' href="images/indexFavicon.ico" type="image/x-icon">
     <title>Employees Data</title>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1 class="title">Manage Employees</h1>
-            <div>
-                <a class="addEmployeeBtn" onclick="toggleModal()">
-                    <img class="plusIcon" href="#" src="images/plusIcon.png">
-                    <span>Add new employee</span>
-                </a>
+        <header >
+            <div class=titleWraper>
+                <div class="titleDiv">
+                    <h1 class="title">Employee Data Management</h1>
+                </div>
+                <div class="addEmployee">
+                    <a href="#" class="addEmployeeBtn" onclick="toggleModal()">
+                        <img class="plusIcon" href="#" src="images/plusWhite.png">
+                        <span>Add new employee</span>
+                    </a>
+                </div>
             </div>
         </header>
-        <div>
-            <input class="filterInput" type="text" placeholder="Filter...">
+        <div class="inputDiv">
+            <form>
+                <input class="filterInput" type="text" placeholder="Filter...">
+            </form>
         </div>
+<<<<<<< HEAD
         <div>
             <table class="employeesTable" id="employeeTable">
                 <thead id="tableHead">
+=======
+        <div class="tableContainer">
+            <table class="employeesTable" id="table">
+                <thead>
+>>>>>>> 4a24010fe0ee1152239fb87a859968bb0d9d685b
                     <tr>
                         <th>
                             <input type="checkbox">
@@ -47,47 +61,65 @@
                         <td>Gotham</td>
                         <td>1190984864</td>
                         <td>
-                            <img>
-                            <img>
+                            <img class="tableIcons" src="images/edit.png">
+                            <img class="tableIcons" src="images/delete.png">
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table>  
         </div>
     </div>
     <!--Container para el modal-->
     <div id="modalContainer" class="hidden"> 
-        <div id="modalContent">
+        <div id="modalContent" class="modalContent">
             <form>
-                <div id="modalHeader">
-                    <h4> Add Employee</h4>
-                    <a href="#" class="close" onclick="toggleModal()"> Cerrar </a>
+                <div id="modalHeader" class="modalHeader">
+                    <h4 class="modalTitle"> Add Employee</h4>
+                    <a href="#" class="close" onclick="toggleModal()">
+                        <i class="fas fa-times"></i>
+                    </a>
 
                 </div>
-                <div id="modalBody">
+                <div id="modalBody" class="modalBody">
                     <div class="formGroup">
-                        <label> Name </label>
-                        <input type="text" id="name">
+                        <form>
+                            <label> Name </label>
+                            <input type="text" name="empName" id="name" required>
+                        </form>
                     </div>
                     <div class="formGroup">
-                         <label> Email </label>
-                         <input type="text" id="email">
+                        <form>
+                            <label> Email </label>
+                            <input type="email" name="empEmail" id="email" required>
+                        </form>
                     </div>
                     <div class="formGroup">
+                        <form>
                             <label> Adress </label>
-                            <input type="text" id="adress">
+                            <input type="text" name="empAdress" id="adress" required>
+                        </form>
                     </div>
                     <div class="formGroup">
+                        <form>
                             <label> Phone </label>
-                            <input type="text" id="phone">
+                            <input type="text" name="empPhone" id="phone" required>
+                        </form>
                     </div>
 
                 </div>
+<<<<<<< HEAD
                 <div id="modalFooter">
                     <input type="button" value="Cancel">
                     <input type="button" value="Add">
                     <!-- recordar agregar un onclick en add para que appendee los elementos a la tabla-->
 
+=======
+                <div id="modalFooter" class="modalFooter">
+                    <form>
+                        <input type="button" value="Cancel" class="cancelBtn" onclick="toggleModal()">
+                        <input type="submit" value="Add" class="addBtn" onclick="getModalValues()">
+                    </form>
+>>>>>>> 4a24010fe0ee1152239fb87a859968bb0d9d685b
                 </div>
             </form>
 
