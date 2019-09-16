@@ -9,9 +9,9 @@ router.get('/', (req, res) => {
 
 router.get('/api/employees', employees);
 
-//router.get('/api/employeesData', employees.getEmployee); //crear esa employees list
-//router.get('/api/employeesData/:id', employees.getEmployee);
-//router.post('/api/employeesData', employees.postEmployee);
+router.get('/api/employees', employees.getEmployee); //crear esa employees list
+router.get('/api/employeesData/:id', employees.getEmployeeByid);
+router.post('/api/employeesData', employees.postEmployee);
 
 // not found status
 router.use((req, res) => {
