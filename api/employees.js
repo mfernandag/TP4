@@ -22,27 +22,27 @@ const patchEmployeeData = (req, res, next) => {
 	} else {
 		res.status(404).send('Not found');
 	}
-}; //ok hasta acá, devuelve el objeto employees
+}; //ok hasta acá
 
 const postEmployee = (req, res, next) => {
 	let data = req.body;
-	if (data.hasOwnProperty('name') && data.hasOwnProperty('email')) {
+	if (data.hasOwnProperty('name') && data.hasOwnProperty('email') && data.hasOwnProperty('address') && data.hasOwnProperty('phone')) {
 		data.id = employees.length + 1; // para el tp, pongamos una generación de ID mas segura.
 		employees.push(data);
-		res.status('201').json(`recibido con el id ${data.id}`);
+		res.status('201').json(`Recibido con el id ${data.id}`);
 	} else {
-		res.status('400').json('fijate que pusiste mal los datos, ameo.');
+		res.status('400').json('Por favor, completa todos los campos');
 	}
 	next();
 }; //ok también
 
-//búsqueda de empleades por id
+//búsqueda por id
 const getEmployeeByid = (req, res, next) => {
 	let resEmployee = employees.find((e) => e.id === req.params.id);
 	if (resEmployee) {
 		res.json(resEmployee);
 	} else {
-		res.status(404).send('no encontramos al empleade');
+		res.status(404).send('No hay resultados');
 	}
 };
  
