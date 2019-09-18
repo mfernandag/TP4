@@ -1,12 +1,12 @@
 const employees = [{
     'name': 'Bruce Wayne', 'email': 'bruce@wayneenterprises.com', 'adress': 'Gotham ', 'phone': '1190984864'
 }];
-//console.log(employees)
+
 const getEmployee = (req, res, next) => {
 	res.json({ employees });
 	next();
 };
-
+/*
 const patchEmployeeData = (req, res, next) => {
 	let data = req.body;
 	let index = ''; 
@@ -45,6 +45,6 @@ const getEmployeeByid = (req, res, next) => {
 		res.status(404).send('No hay resultados');
 	}
 };
- 
-module.exports = { getEmployee, getEmployeeByid, postEmployee };
-//module.exports = { getEmployee, getEmployeeByid, postEmployee }; //vincular estas funciones con el router
+ */
+//module.exports = { getEmployee, getEmployeeByid, postEmployee };
+module.exports = getEmployee;

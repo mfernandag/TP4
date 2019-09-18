@@ -146,3 +146,16 @@ body{
         }
     }
 }
+
+.errorContainer{
+    background-color: #F0F0F0;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .errorMsgDiv{
+        width: 50%;
+        margin-left: 30px;
+    }
+}
