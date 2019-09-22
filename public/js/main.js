@@ -23,6 +23,18 @@ const getModalValues = () => {
     toggleModal()
 }
 
+//check all
+
+const checkAll = document.getElementById('select-all');
+
+checkAll.onclick = () => {
+  if(checkAll.checked){
+    document.querySelectorAll('.check').forEach(u=>u.checked= true)
+
+  } else if(!checkAll.checked){
+    document.querySelectorAll('.check').forEach(u=>u.checked= false)
+  }
+}
 
 
 

@@ -203,6 +203,12 @@ body {
   width: 85%;
 }
 
+@media only screen and (max-width: 420px) {
+  .container {
+    width: 95%;
+  }
+}
+
 .container header {
   width: 100%;
 }
@@ -221,8 +227,23 @@ body {
   padding: 0px 40px;
 }
 
+@media only screen and (max-width: 420px) {
+  .container header .titleWraper {
+    padding: 0px 20px;
+  }
+}
+
 .container header .titleWraper .titleDiv {
   width: 80%;
+}
+
+@media only screen and (max-width: 420px) {
+  .container header .titleWraper .titleDiv {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    text-align: left;
+  }
 }
 
 .container header .titleWraper .titleDiv .title {
@@ -233,6 +254,12 @@ body {
   word-spacing: 4px;
 }
 
+@media only screen and (max-width: 420px) {
+  .container header .titleWraper .titleDiv .title {
+    font-size: 20px;
+  }
+}
+
 .container header .titleWraper .addEmployee {
   width: 50%;
   display: -webkit-box;
@@ -241,6 +268,12 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+@media only screen and (max-width: 420px) {
+  .container header .titleWraper .addEmployee {
+    width: 40%;
+  }
 }
 
 .container header .titleWraper .addEmployee .addEmployeeBtn {
@@ -256,12 +289,35 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-decoration: none;
+  align-items: center;
+}
+
+@media only screen and (max-width: 420px) {
+  .container header .titleWraper .addEmployee .addEmployeeBtn {
+    padding: 8px 10px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .container header .titleWraper .addEmployee .addEmployeeBtn span {
+    font-size: 13px;
+  }
 }
 
 .container header .titleWraper .addEmployee .addEmployeeBtn .plusIcon {
   margin-right: 10px;
   width: 22px;
+}
+
+@media only screen and (max-width: 420px) {
+  .container header .titleWraper .addEmployee .addEmployeeBtn .plusIcon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .container header .titleWraper .addEmployee .addEmployeeBtn:hover {
@@ -271,6 +327,12 @@ body {
 .inputDiv form {
   margin-top: 35px;
   margin-right: 30px;
+}
+
+@media only screen and (max-width: 420px) {
+  .inputDiv form {
+    margin-top: 25px;
+  }
 }
 
 .inputDiv form .filterInput {
@@ -292,6 +354,15 @@ body {
   margin-bottom: 5%;
   padding-left: 25px;
   padding-right: 25px;
+  overflow-x: auto;
+}
+
+@media only screen and (max-width: 420px) {
+  .tableContainer {
+    margin-top: 115px;
+    width: 90%;
+    padding: 0px 15px;
+  }
 }
 
 .tableContainer table {
@@ -307,6 +378,7 @@ body {
 
 .tableContainer table thead th {
   padding-bottom: 10px;
+  padding-right: 20px;
   text-align: left;
 }
 
@@ -328,22 +400,42 @@ body {
 }
 
 .tableContainer table tbody td {
-  padding: 15px 0px;
+  padding: 15px 20px 15px 0px;
   border-bottom: 1px solid #c6c3bd;
   text-align: left;
 }
 
 .tableContainer table tbody td:first-child {
   width: 60px;
-  text-align: center;
 }
 
 .tableContainer table tbody td:last-child {
   width: 70px;
+  padding: 15px 0px;
 }
 
 .tableContainer table tbody td .tableIcons {
   width: 20px;
   padding: 0px 5px;
+}
+
+.errorContainer {
+  background-color: #F0F0F0;
+  padding: 60px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.errorContainer .errorMsgDiv {
+  width: 50%;
+  margin-left: 30px;
 }
 /*# sourceMappingURL=styles.css.map */

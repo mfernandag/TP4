@@ -1,24 +1,22 @@
 const express = require('express');
 const path = require('path');
-
-const users = require('../api/users');
+const employees = require('../api/employees');
 const router = express.Router();
 
-// PAGES ROUTES //
+//pages routes
 router.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../pages/index.html'));
 });
 
-// API ROUTES //
+//api routes
+router.get('/api/employees', employees);
+//router.get('/api/employees', employees.getEmployee); 
+//router.get('/api/employeesData/:id', employees.getEmployeeByid);
+//router.post('/api/employees', employees.postEmployee);
 
-router.get('/api/users', users.getUser);
-router.get('/api/users/:id', users.getUserByid);
-router.post('/api/users', users.postUser);
-
-
-// NOT FOUNS HANDLER //
+// not found status
 router.use((req, res) => {
-	res.status(404).send('pifiaste wache');
+	res.status(404).sendFile(path.join(__dirname, '../pages/404.html'));
 });
 
 module.exports = router;
