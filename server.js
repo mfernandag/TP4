@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
 const router = require('./modules/router');
 const server = express();
 const port = 4002;
@@ -11,8 +12,8 @@ server.use(
 		extended: true
 	})
 );
-
 server.use(bodyParser.json());
+
 server.use(logger('dev'));
 server.use('/assets', express.static('public'));
 server.use(router);

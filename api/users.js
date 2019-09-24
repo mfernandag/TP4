@@ -1,10 +1,8 @@
 const uniqid = require('uniqid');
 
-
 const users = [
-	{ id: '1', name: 'calixta', email: 'calix@ta.com' },
-	{ id: '2', name: 'calixta', email: 'calix@ta.com' },
-	{ id: '3', name: 'calixta', email: 'calix@ta.com' }
+	{ id: '1', name: 'Darth Vader', email: 'heladoscuro@gmail.com', address: 'Death Star', phone: 123456},
+
 ];
 
 const getUser = (req, res, next) => {
@@ -20,7 +18,6 @@ const patchUser = (req, res, next) => {
 		index = i;
 		return e.id === req.params.id;
 	});
-
 	if (resUser) {
 		let editedUser = { ...resUser, ...data };
 		user.splice(1, index);
@@ -38,7 +35,7 @@ const postUser = (req, res, next) => {
 		users.push(data);
 		res.status('201').json(`recibido con el id ${data.id}`);
 	} else {
-		res.status('400').json('fijate que pusiste mal los datos, ameo.');
+		res.status('400').json('fijate que le pifiaste a algun dato.');
 	}
 	next();
 };

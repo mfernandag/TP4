@@ -384,7 +384,6 @@ body {
 
 .tableContainer table th:first-child {
   width: 60px;
-  text-align: center;
 }
 
 .tableContainer table th:last-child {
