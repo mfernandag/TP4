@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
 router.get('/api/users', users.getUser);
 router.get('/api/users/:id', users.getUserByid);
 router.post('/api/users', users.postUser);
+router.delete('/api/users/:id', users.deleteUser);
 
 
 // NOT FOUNS HANDLER //

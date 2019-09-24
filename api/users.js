@@ -49,4 +49,16 @@ const getUserByid = (req, res, next) => {
 	}
 };
 
-module.exports = { getUser, getUserByid, postUser };
+const deleteUser = (req, res, next) => {
+	let searchResult = users.find(e => e.id === req.params.id)
+	let index = users.findIndex(e => e.id === req.params.id)
+	if (searchResult) {
+		users.splice(index, 1)
+		res.status('200').json('Se eliminó al empleado :(')
+	} else {
+		res.status('400').send('No se pudo eliminar al empleado')
+	}
+	next()
+}
+
+module.exports = { getUser, getUserByid, postUser, deleteUser };

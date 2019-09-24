@@ -55,7 +55,7 @@
                         <td>Gotham</td>
                         <td>1190984864</td>
                         <td>
-                            <img class="tableIcons" src="assets/images/edit.png">
+                            <img class="tableIcons" src="assets/images/edit.png" onclick="">
                             <img class="tableIcons" src="assets/images/delete.png">
                         </td>
                     </tr>
@@ -63,10 +63,10 @@
             </table>  
         </div>
     </div>
-    <!--Container para el modal-->
+    <!--Modal para agregar empleado-->
     <div id="modalContainer" class="hidden"> 
         <div id="modalContent" class="modalContent">
-            <form>
+            <form id="form">
                 <div id="modalHeader" class="modalHeader">
                     <h4 class="modalTitle"> Add Employee</h4>
                     <a href="#" class="close" onclick="toggleModal()">
@@ -89,8 +89,8 @@
                     </div>
                     <div class="formGroup">
                         <form>
-                            <label> Adress </label>
-                            <input type="text" name="empAdress" id="adress" required>
+                            <label> Address </label>
+                            <input type="text" name="empAddress" id="address" required>
                         </form>
                     </div>
                     <div class="formGroup">
@@ -104,12 +104,28 @@
                 <div id="modalFooter" class="modalFooter">
                     <form>
                         <input type="button" value="Cancel" class="cancelBtn" onclick="toggleModal()">
-                        <input type="submit" value="Add" class="addBtn" onclick="getModalValues()">
+                        <input type="submit" value="Add" class="addBtn" onclick="getFormValues()">
                     </form>
                 </div>
             </form>
 
         </div>
     </div>
+        <!--DELETE EMPLOYEE MODAL-->
+        <div class="delete-modal hidden">
+            <div class="delete-container">
+              <div class="delete-top">
+                <div class="modal-title">delete employee</div>
+                <div class="close" onClick="closeDelete()">x</div>
+              </div>
+                  <div class="delete-subtitles">Are you sure you want to delete these Records?</div>
+                  <span>This action cannot be undone.</span>
+                  <div class="delete-footer">
+                    <div class="cancel" onclick="closeDelete()">Cancel</div>
+                    <div class="delete"> Delete</div> 
+                  </div>
+                    
+              </div>
+            </div>
 </body>
 </html>
