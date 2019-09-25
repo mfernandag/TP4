@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
-const employees = require('../api/employees');
+
+const users = require('../api/users');
 const router = express.Router();
 
-//pages routes
-
+// PAGES ROUTES //
 router.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../pages/index.html'));
 });
@@ -13,13 +13,15 @@ router.get('/home', (req, res) => {
 	res.sendFile(path.join(__dirname, '../pages/index.html'))
 })
 
-//api routes
-router.get('/api/employees', employees);
-//router.get('/api/employees', employees.getEmployee); 
-//router.get('/api/employeesData/:id', employees.getEmployeeByid);
-//router.post('/api/employees', employees.postEmployee);
+// API ROUTES //
 
-// not found status
+router.get('/api/users', users.getUser);
+router.get('/api/users/:id', users.getUserByid);
+router.post('/api/users', users.postUser);
+router.delete('/api/users/:id', users.deleteUser);
+
+
+// NOT FOUNS HANDLER //
 router.use((req, res) => {
 	res.status(404).sendFile(path.join(__dirname, '../pages/404.html'));
 });

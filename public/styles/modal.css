@@ -6,7 +6,7 @@
   visibility: visible;
 }
 
-#modalContainer {
+.addAndEdit {
   width: 100%;
   height: 100vh;
   background-color: rgba(76, 76, 76, 0.8);
@@ -43,7 +43,7 @@
   }
 }
 
-#modalContainer .modalContent {
+.addAndEdit .modalContent {
   width: 420px;
   height: 490px;
   background-image: url("../images/universe.jpg");
@@ -58,55 +58,55 @@
           box-shadow: 3px 5px 16px 5px rgba(0, 0, 0, 0.7);
 }
 
-#modalContainer .modalContent .modalHeader {
+.addAndEdit .modalContent .modalHeader {
   padding: 22px 25px 22px 25px;
   height: 20px;
 }
 
-#modalContainer .modalContent .modalHeader .modalTitle {
+.addAndEdit .modalContent .modalHeader .modalTitle {
   float: left;
   color: white;
   font-size: 22px;
 }
 
-#modalContainer .modalContent .modalHeader .close {
+.addAndEdit .modalContent .modalHeader .close {
   float: right;
   color: #959595;
 }
 
-#modalContainer .modalContent .modalHeader .close:hover {
+.addAndEdit .modalContent .modalHeader .close:hover {
   color: #19d39f;
 }
 
-#modalContainer .modalContent .modalBody {
+.addAndEdit .modalContent .modalBody {
   padding: 0px 25px 30px 25px;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   background-color: rgba(38, 38, 38, 0.9);
 }
 
-#modalContainer .modalContent .modalBody .formGroup {
+.addAndEdit .modalContent .modalBody .formGroup {
   margin-top: 15px;
 }
 
-#modalContainer .modalContent .modalBody .formGroup label {
+.addAndEdit .modalContent .modalBody .formGroup label {
   float: left;
   margin-bottom: 5px;
   color: white;
 }
 
-#modalContainer .modalContent .modalBody .formGroup input {
+.addAndEdit .modalContent .modalBody .formGroup input {
   width: 92%;
   padding: 10px;
   font-size: 15px;
 }
 
-#modalContainer .modalContent .modalBody .formGroup input:focus {
+.addAndEdit .modalContent .modalBody .formGroup input:focus {
   outline: none;
   background-color: #ab8fb2;
 }
 
-#modalContainer .modalContent .modalFooter {
+.addAndEdit .modalContent .modalFooter {
   padding: 20px 27px 0px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -116,7 +116,7 @@
           justify-content: flex-end;
 }
 
-#modalContainer .modalContent .modalFooter .cancelBtn {
+.addAndEdit .modalContent .modalFooter .cancelBtn {
   padding: 10px 30px;
   margin-left: 18px;
   font-size: 15px;
@@ -128,17 +128,17 @@
   background-color: #868686;
 }
 
-#modalContainer .modalContent .modalFooter .cancelBtn:focus {
+.addAndEdit .modalContent .modalFooter .cancelBtn:focus {
   outline: 0;
 }
 
-#modalContainer .modalContent .modalFooter .cancelBtn:hover {
+.addAndEdit .modalContent .modalFooter .cancelBtn:hover {
   background-color: #683675;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
-#modalContainer .modalContent .modalFooter .addBtn {
+.addAndEdit .modalContent .modalFooter .addBtn {
   padding: 10px 30px;
   margin-left: 18px;
   font-size: 15px;
@@ -150,11 +150,11 @@
   background-color: #1C9886;
 }
 
-#modalContainer .modalContent .modalFooter .addBtn:focus {
+.addAndEdit .modalContent .modalFooter .addBtn:focus {
   outline: 0;
 }
 
-#modalContainer .modalContent .modalFooter .addBtn:hover {
+.addAndEdit .modalContent .modalFooter .addBtn:hover {
   background-color: #683675;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
