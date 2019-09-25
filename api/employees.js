@@ -6,6 +6,7 @@ const getEmployee = (req, res, next) => {
 	res.json({ employees });
 	next();
 };
+
 /*
 const patchEmployeeData = (req, res, next) => {
 	let data = req.body;
