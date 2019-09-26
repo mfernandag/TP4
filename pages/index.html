@@ -64,7 +64,7 @@
         </div>
     </div>
     <!--Modal para agregar empleado-->
-    <div id="modalContainer" class="addAndEdit hidden"> 
+    <div id="modalContainer" class="modalsContainer hidden"> 
         <div id="modalContent" class="modalContent">
             <form id="form">
                 <div id="modalHeader" class="modalHeader">
@@ -112,11 +112,11 @@
         </div>
     </div>
     <!--Edit modal-->
-    <div id="editModalContainer" class="addAndEdit hidden"> 
+    <div id="editModalContainer" class="modalsContainer hidden"> 
         <div id="modalContent" class="modalContent">
             <form id="form">
                 <div id="modalHeader" class="modalHeader">
-                    <h4 class="modalTitle"> Add Employee</h4>
+                    <h4 class="modalTitle"> Edit Employee</h4>
                     <a href="#" class="close" onclick="toggleEditModal()">
                         <i class="fas fa-times"></i>
                     </a>
@@ -150,25 +150,27 @@
                 </div>
                 <div id="modalFooter" class="modalFooter">
                     <form>
-                        <input type="button" value="Cancel" class="cancelBtn" onclick="toggleModal()">
+                        <input type="button" value="Cancel" class="cancelBtn" onclick="toggleEditModal()">
                         <input type="submit" value="Edit" class="addBtn" onclick="getFormValues()">
                     </form>
                 </div>
             </form>
-
         </div>
     </div>
         <!--DELETE EMPLOYEE MODAL-->
-        <div class="delete-modal hidden">
+        <div id="deleteModalContainer" class="modalsContainer hidden">
             <div class="delete-container">
               <div class="delete-top">
-                <div class="modal-title">delete employee</div>
-                <div class="close" onClick="closeDelete()">x</div>
-              </div>
+                <h4 class="modal-title">Delete employee</h4>
+                <!--<p class="close" onClick="closeDelete()">x</div>-->
+                <a href="#" class="close" onclick="toggleDeleteModal()">
+                    <i class="fas fa-times"></i>
+                </a>
+                </div>
                   <div class="delete-subtitles">Are you sure you want to delete these Records?</div>
-                  <span>This action cannot be undone.</span>
+                  <p class="deleteSubtitle">This action cannot be undone.</p>
                   <div class="delete-footer">
-                    <div class="cancel" onclick="closeDelete()">Cancel</div>
+                    <div class="cancel" onclick="toggleDeleteModal()">Cancel</div>
                     <div class="delete"> Delete</div> 
                   </div>                    
               </div>

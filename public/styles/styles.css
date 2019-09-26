@@ -6,7 +6,7 @@
   visibility: visible;
 }
 
-#modalContainer {
+.modalsContainer {
   width: 100%;
   height: 100vh;
   background-color: rgba(76, 76, 76, 0.8);
@@ -43,7 +43,7 @@
   }
 }
 
-#modalContainer .modalContent {
+.modalsContainer .modalContent {
   width: 420px;
   height: 490px;
   background-image: url("../images/universe.jpg");
@@ -58,55 +58,55 @@
           box-shadow: 3px 5px 16px 5px rgba(0, 0, 0, 0.7);
 }
 
-#modalContainer .modalContent .modalHeader {
+.modalsContainer .modalContent .modalHeader {
   padding: 22px 25px 22px 25px;
   height: 20px;
 }
 
-#modalContainer .modalContent .modalHeader .modalTitle {
+.modalsContainer .modalContent .modalHeader .modalTitle {
   float: left;
   color: white;
   font-size: 22px;
 }
 
-#modalContainer .modalContent .modalHeader .close {
+.modalsContainer .modalContent .modalHeader .close {
   float: right;
   color: #959595;
 }
 
-#modalContainer .modalContent .modalHeader .close:hover {
+.modalsContainer .modalContent .modalHeader .close:hover {
   color: #19d39f;
 }
 
-#modalContainer .modalContent .modalBody {
+.modalsContainer .modalContent .modalBody {
   padding: 0px 25px 30px 25px;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   background-color: rgba(38, 38, 38, 0.9);
 }
 
-#modalContainer .modalContent .modalBody .formGroup {
+.modalsContainer .modalContent .modalBody .formGroup {
   margin-top: 15px;
 }
 
-#modalContainer .modalContent .modalBody .formGroup label {
+.modalsContainer .modalContent .modalBody .formGroup label {
   float: left;
   margin-bottom: 5px;
   color: white;
 }
 
-#modalContainer .modalContent .modalBody .formGroup input {
+.modalsContainer .modalContent .modalBody .formGroup input {
   width: 92%;
   padding: 10px;
   font-size: 15px;
 }
 
-#modalContainer .modalContent .modalBody .formGroup input:focus {
+.modalsContainer .modalContent .modalBody .formGroup input:focus {
   outline: none;
   background-color: #ab8fb2;
 }
 
-#modalContainer .modalContent .modalFooter {
+.modalsContainer .modalContent .modalFooter {
   padding: 20px 27px 0px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -116,7 +116,7 @@
           justify-content: flex-end;
 }
 
-#modalContainer .modalContent .modalFooter .cancelBtn {
+.modalsContainer .modalContent .modalFooter .cancelBtn {
   padding: 10px 30px;
   margin-left: 18px;
   font-size: 15px;
@@ -128,17 +128,17 @@
   background-color: #868686;
 }
 
-#modalContainer .modalContent .modalFooter .cancelBtn:focus {
+.modalsContainer .modalContent .modalFooter .cancelBtn:focus {
   outline: 0;
 }
 
-#modalContainer .modalContent .modalFooter .cancelBtn:hover {
+.modalsContainer .modalContent .modalFooter .cancelBtn:hover {
   background-color: #683675;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
-#modalContainer .modalContent .modalFooter .addBtn {
+.modalsContainer .modalContent .modalFooter .addBtn {
   padding: 10px 30px;
   margin-left: 18px;
   font-size: 15px;
@@ -150,15 +150,116 @@
   background-color: #1C9886;
 }
 
-#modalContainer .modalContent .modalFooter .addBtn:focus {
+.modalsContainer .modalContent .modalFooter .addBtn:focus {
   outline: 0;
 }
 
-#modalContainer .modalContent .modalFooter .addBtn:hover {
+.modalsContainer .modalContent .modalFooter .addBtn:hover {
   background-color: #683675;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   letter-spacing: 1px;
+}
+
+.modalsContainer .delete-container {
+  width: 420px;
+  height: 300px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.modalsContainer .delete-container .delete-top {
+  border-bottom: 1px solid #19d39f;
+  padding: 22px 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modalsContainer .delete-container .delete-top .modal-title {
+  float: left;
+  font-size: 22px;
+}
+
+.modalsContainer .delete-container .delete-top .close {
+  color: #683675;
+  cursor: pointer;
+}
+
+.modalsContainer .delete-container .delete-subtitles {
+  padding: 30px 0px;
+}
+
+.modalsContainer .delete-container .deleteSubtitle {
+  font-size: 14px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #19d39f;
+}
+
+.modalsContainer .delete-container .delete-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+  padding: 30px 40px 30px 40px;
+}
+
+.modalsContainer .delete-container .delete-footer .cancel {
+  padding: 10px 30px;
+  margin-left: 18px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: black;
+  margin: 0px;
+}
+
+.modalsContainer .delete-container .delete-footer .cancel:focus {
+  outline: 0;
+}
+
+.modalsContainer .delete-container .delete-footer .cancel:hover {
+  background-color: #959595;
+}
+
+.modalsContainer .delete-container .delete-footer .delete {
+  padding: 10px 30px;
+  margin-left: 18px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  background-color: #683675;
+  color: black;
+  margin: 0px;
+}
+
+.modalsContainer .delete-container .delete-footer .delete:focus {
+  outline: 0;
+}
+
+.modalsContainer .delete-container .delete-footer .delete:hover {
+  background-color: #ff3232;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -384,6 +485,7 @@ body {
 
 .tableContainer table th:first-child {
   width: 60px;
+  text-align: center;
 }
 
 .tableContainer table th:last-child {
@@ -406,6 +508,7 @@ body {
 
 .tableContainer table tbody td:first-child {
   width: 60px;
+  text-align: center;
 }
 
 .tableContainer table tbody td:last-child {

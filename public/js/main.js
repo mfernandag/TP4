@@ -19,6 +19,15 @@ const toggleEditModal = () => {
     clean()
 }
 
+const toggleDeleteModal = () => {
+    let deleteModal = document.getElementById('deleteModalContainer');
+    deleteModal.classList.toggle('hidden')
+    if (deleteModal.classList.contains('hidden')){
+        deleteModal.classList.add('active')
+    }
+    clean()
+}
+
 
 //Limpiar el form
 const clean = ()=>{
@@ -69,7 +78,7 @@ const createTableElements = ({id, name, email, address, phone}) =>
         <a class="edit" id="${id}" onclick="toggleEditModal()">
         <img class="tableIcons" src="assets/images/edit.png">
         </a>
-        <a class="delete" id="${id}" onclick="toggleModal()">
+        <a class="delete" id="${id}" onclick="toggleDeleteModal()">
         <img class="tableIcons" src="assets/images/delete.png" onClick="deleteUser(${id})">
         </a>
     </td>
@@ -147,13 +156,12 @@ const deleteModal = document.querySelector('.delete-modal');
 const openDelete = ()=>{
     const visibleDelete = ()=>deleteModal.classList.remove('hidden');
     visibleDelete();
-  }
-  //close delete modal
-  const closeDelete =()=>{
+}
+//close delete modal
+const closeDelete =()=>{
     const hiddenDelete=() => deleteModal.classList.add('hidden');
     hiddenDelete();
-  }
-
+}
 
 
 

@@ -162,6 +162,7 @@ body{
         }
         th:first-child{
             width: 60px;
+            text-align: center;
         }
         th:last-child{
             width: 70px;
@@ -177,6 +178,7 @@ body{
                 text-align: left;
                 &:first-child{
                     width: 60px;
+                    text-align: center;
                 }
                 &:last-child{
                     width: 70px;
