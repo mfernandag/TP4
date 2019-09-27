@@ -164,6 +164,30 @@ const closeDelete =()=>{
 }
 
 
+const searchValues = () => {
+    var input, filter, table, tr;
+    input = document.getElementById("filterInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tableBody");
+    tr = table.getElementsByTagName('tr');
+    for (let i = 0; i < tr.length; i++) {
+        let tdData = tr[i].getElementsByTagName("td");
+        let test = false;
+    for(let j = 0; j < tdData.length; j++){
+        let td = tdData[j];
+        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            test = true;
+        } 
+    }
+    if(test){
+        tr[i].style.display = "";
+    }
+    else {
+        tr[i].style.display = "none";
+    }
+  }
+}
+
 
 
 
