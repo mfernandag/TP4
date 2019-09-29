@@ -66,49 +66,38 @@
     <!--Modal para agregar empleado-->
     <div id="modalContainer" class="modalsContainer hidden"> 
         <div id="modalContent" class="modalContent">
-            <form id="form">
+            <form id="form" name="modalForms">
                 <div id="modalHeader" class="modalHeader">
                     <h4 class="modalTitle"> Add Employee</h4>
                     <a href="#" class="close" onclick="toggleModal()">
                         <i class="fas fa-times"></i>
                     </a>
-
                 </div>
                 <div id="modalBody" class="modalBody">
                     <div class="formGroup">
-                        <form>
-                            <label> Name </label>
-                            <input type="text" name="empName" id="name" required>
-                        </form>
+                        <label> Name </label>
+                        <input class="input" type="text" name="empName" id="name" required="" onKeyup="formCompleteValidation()">
                     </div>
                     <div class="formGroup">
-                        <form>
-                            <label> Email </label>
-                            <input type="email" name="empEmail" id="email" required>
-                        </form>
+                        <label> Email </label>
+                        <input class="input" type="email" name="empEmail" id="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" onKeyup="formCompleteValidation()">
                     </div>
                     <div class="formGroup">
-                        <form>
-                            <label> Address </label>
-                            <input type="text" name="empAddress" id="address" required>
-                        </form>
+                        <label> Address </label>
+                        <input class="input" type="text" name="empAddress" id="address" required="" onKeyup="formCompleteValidation()" >
                     </div>
                     <div class="formGroup">
-                        <form>
-                            <label> Phone </label>
-                            <input type="text" name="empPhone" id="phone" required>
-                        </form>
+                        <label> Phone </label>
+                        <input class="input" type="number" name="empPhone" id="phone" required="" onKeyup="formCompleteValidation()" >
                     </div>
-
                 </div>
                 <div id="modalFooter" class="modalFooter">
-                    <form>
+                    
                         <input type="button" value="Cancel" class="cancelBtn" onclick="toggleModal()">
-                        <input type="submit" value="Add" class="addBtn" onclick="getFormValues()">
-                    </form>
+                        <input id="submitBtn" type="submit" value="Add" class="addBtn" disabled="disabled" onclick="getFormValues()">
+                    
                 </div>
             </form>
-
         </div>
     </div>
     <!--Edit modal-->
@@ -143,7 +132,7 @@
                     <div class="formGroup">
                         <form>
                             <label> Phone </label>
-                            <input type="text" name="empPhone" id="phone" required>
+                            <input type="number" name="empPhone" id="phone" required>
                         </form>
                     </div>
 
@@ -167,7 +156,7 @@
                     <i class="fas fa-times"></i>
                 </a>
                 </div>
-                  <div class="delete-subtitles">Are you sure you want to delete these Records?</div>
+                  <div class="delete-subtitles">Are you sure you want to delete these records?</div>
                   <p class="deleteSubtitle">This action cannot be undone.</p>
                   <div class="delete-footer">
                     <div class="cancel" onclick="toggleDeleteModal()">Cancel</div>

@@ -44,6 +44,39 @@ const initialize = () => {
     getEmployees()
 }
 
+const emailValidation = () => {
+    var email = document.getElementById('email');
+        var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!filter.test(email.value)) {
+            alert('Please provide a valid email address');
+            email.focus;
+            return false;
+        }
+}
+
+//para que solo haga el submit si todos los campos están completos
+const formCompleteValidation = () => {
+    let name, email, address, phone
+    name = document.getElementById('name');
+    email = document.getElementById('email');
+    address = document.getElementById('address');
+    phone = document.getElementById('phone');
+    var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let cansubmit = true;
+    if(name.value == "" || email.value == '' || address.value == '' || phone.value == ''){
+        cansubmit = false;
+    }
+    document.getElementById('submitBtn').disabled = !cansubmit;
+    if (!filter.test(email.value)) {
+        email.focus;
+        document.getElementById('submitBtn').disabled = cansubmit;
+        return false;
+    }
+}
+
+
+
+
 // Hacemos un get - fetch de los usuarios
 
 const getEmployees = () => {
@@ -162,6 +195,7 @@ const closeDelete =()=>{
     const hiddenDelete=() => deleteModal.classList.add('hidden');
     hiddenDelete();
 }
+
 
 
 const searchValues = () => {
