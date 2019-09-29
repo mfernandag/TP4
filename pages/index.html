@@ -66,7 +66,7 @@
     <!--Modal para agregar empleado-->
     <div id="modalContainer" class="modalsContainer hidden"> 
         <div id="modalContent" class="modalContent">
-            <form id="form" name="modalForms">
+            <form id="form" method="post" name="modalForms" >
                 <div id="modalHeader" class="modalHeader">
                     <h4 class="modalTitle"> Add Employee</h4>
                     <a href="#" class="close" onclick="toggleModal()">
@@ -76,7 +76,7 @@
                 <div id="modalBody" class="modalBody">
                     <div class="formGroup">
                         <label> Name </label>
-                        <input class="input" type="text" name="empName" id="name" required="" onKeyup="formCompleteValidation()">
+                        <input class="input" type="text" name="empName" id="name" required onKeyup="formCompleteValidation()" >
                     </div>
                     <div class="formGroup">
                         <label> Email </label>
@@ -84,11 +84,11 @@
                     </div>
                     <div class="formGroup">
                         <label> Address </label>
-                        <input class="input" type="text" name="empAddress" id="address" required="" onKeyup="formCompleteValidation()" >
+                        <input class="input" type="text" name="empAddress" id="address" required onKeyup="formCompleteValidation()" >
                     </div>
                     <div class="formGroup">
                         <label> Phone </label>
-                        <input class="input" type="number" name="empPhone" id="phone" required="" onKeyup="formCompleteValidation()" >
+                        <input class="input" type="number" name="empPhone" id="phone" required onKeyup="formCompleteValidation()" >
                     </div>
                 </div>
                 <div id="modalFooter" class="modalFooter">

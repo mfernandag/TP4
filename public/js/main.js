@@ -44,38 +44,56 @@ const initialize = () => {
     getEmployees()
 }
 
-const emailValidation = () => {
-    var email = document.getElementById('email');
-        var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!filter.test(email.value)) {
-            alert('Please provide a valid email address');
-            email.focus;
-            return false;
-        }
-}
-
 //para que solo haga el submit si todos los campos están completos
+
 const formCompleteValidation = () => {
     let name, email, address, phone
     name = document.getElementById('name');
     email = document.getElementById('email');
     address = document.getElementById('address');
     phone = document.getElementById('phone');
-    var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    let cansubmit = true;
-    if(name.value == "" || email.value == '' || address.value == '' || phone.value == ''){
-        cansubmit = false;
+    var filterEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var text = /^[a-zA-Z]+$/
+    let canSubmit = true;
+    if(name.value == '' && email.value == '' && address.value == '' && phone.value == ''){
+        canSubmit = false;
+    }else{
+        document.getElementById('submitBtn').disabled = !canSubmit;
     }
-    document.getElementById('submitBtn').disabled = !cansubmit;
-    if (!filter.test(email.value)) {
-        email.focus;
-        document.getElementById('submitBtn').disabled = cansubmit;
+    
+    if (!filterEmail.test(email.value)) {
+        document.getElementById('submitBtn').disabled = canSubmit;
         return false;
     }
 }
 
+const validateForm = () => {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let address = document.getElementById('address').value;
+    let phone = document.getElementById('phone').value;
+    let isValid = 1;
 
+    if(name.length > 1 && email.length > 1 && address.length > 1 && phone.length > 1){
+        return false;
+    }
 
+    let isOnlyText = /^[a-zA-Z]+$/.test(name);
+    if(!isOnlyText){
+        return false;
+    }
+
+    isValidEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    if(!isValidEmail){
+        return false;
+    }
+
+    let isNumber = /^\d+$/.test(phone);
+    if(!isNumber){
+        return false
+    }
+    document.getElementById('form').Submit();
+}
 
 // Hacemos un get - fetch de los usuarios
 
@@ -138,7 +156,6 @@ const getFormValues = () => {
         'address': userAddress.value,
         'phone': userPhone.value
     };
-
     postEmployee(payload)
 }
 
@@ -221,8 +238,6 @@ const searchValues = () => {
     }
   }
 }
-
-
 
 
 
