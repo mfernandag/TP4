@@ -137,8 +137,8 @@
                 </div>
                 <div id="modalFooter" class="modalFooter">
                     <form>
-                        <input type="button" value="Cancel" class="cancelBtn" onclick="toggleEditModal()">
-                        <input type="submit" value="Edit" class="addBtn" onclick="getFormValues()">
+                        <input type="button" value="Cancel" class="cancelBtn" onclick="toggleEditModal(id)">
+                        <input type="submit" value="Edit" class="addBtn">
                     </form>
                 </div>
             </form>
@@ -157,7 +157,7 @@
                   <p class="deleteSubtitle">This action cannot be undone.</p>
                   <div class="delete-footer">
                     <div class="cancel" onclick="toggleDeleteModal()">Cancel</div>
-                    <div class="delete" onclick="deleteEmployee()"> Delete</div> 
+                    <div class="delete" onclick="deleteEmployee(id)"> Delete</div> 
                   </div>                    
               </div>
         </div>

@@ -10,7 +10,7 @@ const getUser = (req, res, next) => {
 	next();
 };
 
-/*
+
 const patchUser = (req, res, next) => {
 	let data = req.body;
 	let index = '';
@@ -25,8 +25,9 @@ const patchUser = (req, res, next) => {
 	} else {
 		res.status(404).send('no encontramos al usuario');
 	}
+	next();
 };
-*/
+
 
 const postUser = (req, res, next) => {
     let data = req.body;
@@ -61,4 +62,4 @@ const deleteUser = (req, res, next) => {
 	next()
 }
 
-module.exports = { getUser, getUserByid, postUser, deleteUser };
+module.exports = { getUser, getUserByid, postUser, deleteUser, patchUser };

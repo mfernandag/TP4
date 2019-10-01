@@ -1,6 +1,6 @@
 const api = 'http://localhost:4002/api/users';
 
-// Funcion de abrir y cerrar modal
+// Funcion para abrir y cerrar modal para agregar empleados
 const toggleModal = () => { 
     let modal = document.getElementById('modalContainer');
     modal.classList.toggle('hidden')
@@ -10,21 +10,31 @@ const toggleModal = () => {
     clean()
 }
 
-const toggleEditModal = () => {
+// Funcion para abrir y cerrar modal para editar empleados
+
+const toggleEditModal = (id) => {
     let editModal = document.getElementById('editModalContainer');
+    let editBtn = document.getElementsByClassName('addBtn')
+    editBtn.onclick = () => editEmployee(id)
     editModal.classList.toggle('hidden')
     if (editModal.classList.contains('hidden')){
         editModal.classList.add('active')
     }
-    clean()
+    fetch(`${api}/${id}`)
+    .then(res => res.json())
+    .then(res => fillEditModal(res)) 
 }
 
-const toggleDeleteModal = () => {
+// Funcion para abrir y cerrar modal para eliminar 
+
+const toggleDeleteModal = (id) => {
     let deleteModal = document.getElementById('deleteModalContainer');
+    let deleteBtn = document.getElementsByClassName('delete')
     deleteModal.classList.toggle('hidden')
     if (deleteModal.classList.contains('hidden')){
         deleteModal.classList.add('active')
     }
+    deleteBtn.onclick = () => deleteEmployee(id)
     clean()
 }
 
@@ -110,17 +120,15 @@ const createTableElements = ({id, name, email, address, phone}) =>
     <td>${address}</td>
     <td>${phone}</td>
     <td class="option-btns">
-        <a class="edit" id="${id}" onclick="toggleEditModal()">
+        <a class="edit" id="${id}" onclick="toggleEditModal(id)">
         <img class="tableIcons" src="assets/images/edit.png">
         </a>
-        <a class="delete" id="${id}" onclick="toggleDeleteModal()">
-        <img class="tableIcons" src="assets/images/delete.png" onclick="deleteEmployee(${id})">
+        <a class="delete" id="${id}" onclick="toggleDeleteModal(id)">
+        <img class="tableIcons" src="assets/images/delete.png">
         </a>
     </td>
   </tr>
 ` ;
-
- // tenemos que crear modal para editar y otro para eliminar. 
 
 
 // Posteemos usuarios!
@@ -171,6 +179,42 @@ const postEmployee = payload => {
 // 1) Tomar el id del usuario
 // 2) Rellenar el modal con la informacion pre-cargada
 
+const fillEditModal = data => {
+    const form = document.getElementById('editForm')
+    const {name, email, address, phone} = form
+
+    name.value = data.name
+    email.value = data.email
+    address.value = data.address
+    phone.value = data.phone
+}
+
+// EDITAR EMPLEADOS
+const editEmployee = id => {
+    const editForm = document.getElementById('editForm')
+    const {name, email, address, phone} = editForm
+    const data = {
+        name: name.value,
+        email: email.value,
+        address: address.value,
+        phone: phone.value
+    }
+
+        fetch(`${api}/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                toggleEditModal(id)
+                getEmployees()
+            })
+    }
+
 
 
 // Borremos usuarios :(
@@ -180,7 +224,7 @@ const postEmployee = payload => {
 // 3) Cerrar el modal
 // 4) Llamar a initialize para que se reimpriman los usuarios
 
-// ELIMINAR EMPLEADO
+
 const deleteEmployee = id => {
     fetch(`${api}/${id}`, {
         method: 'DELETE',
@@ -190,24 +234,12 @@ const deleteEmployee = id => {
     })
     .then(res => res.json())
     .then(res => {
-        console.log(res)
-        toggleDeleteModal()
+        toggleDeleteModal(id)
         initialize()
     })
 }
 
-// Modales
-const deleteModal = document.querySelector('.delete-modal');
-//open delete modal
-const openDelete = ()=>{
-    const visibleDelete = ()=>deleteModal.classList.remove('hidden');
-    visibleDelete();
-}
-//close delete modal
-const closeDelete =()=>{
-    const hiddenDelete=() => deleteModal.classList.add('hidden');
-    hiddenDelete();
-}
+// Filtremos usuarios
 
 const searchValues = () => {
     var input, filter, table, tr;
