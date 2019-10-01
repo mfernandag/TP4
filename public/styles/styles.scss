@@ -169,25 +169,27 @@ body{
         }
         tbody{
             font-size: 14px;
-            &:hover{
-                background-color: #d6d6d6;
-            }
-            td{
-                padding: 15px 20px 15px 0px;
-                border-bottom: 1px solid #c6c3bd;
-                text-align: left;
-                &:first-child{
-                    width: 60px;
-                    text-align: center;
+            tr{
+                &:hover{
+                    background-color: #d6d6d6;
                 }
-                &:last-child{
-                    width: 70px;
-                    padding: 15px 0px;
-                }
-                .tableIcons{
-                    width: 20px;
-                    padding: 0px 5px;
-                    cursor: pointer;
+                td{
+                    padding: 15px 20px 15px 0px;
+                    border-bottom: 1px solid #c6c3bd;
+                    text-align: left;
+                    &:first-child{
+                        width: 60px;
+                        text-align: center;
+                    }
+                    &:last-child{
+                        width: 70px;
+                        padding: 15px 0px;
+                    }
+                    .tableIcons{
+                        width: 20px;
+                        padding: 0px 5px;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -201,8 +203,18 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
+    .errorImg{
+        img{
+            width: 250px;
+        }
+    }
     .errorMsgDiv{
-        width: 50%;
+        width: 40%;
         margin-left: 30px;
     }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

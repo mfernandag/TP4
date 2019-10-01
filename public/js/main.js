@@ -44,8 +44,43 @@ const initialize = () => {
     getEmployees()
 }
 
-// Hacemos un get - fetch de los usuarios
+//para que solo haga el submit si todos los campos están completos
+const formValidation = () => {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let address = document.getElementById('address').value;
+    let phone = document.getElementById('phone').value;
+    let isValid = false;
+    if(name !== '' && phone !== '' && address !== '' && email !== ''){
+        isValid = true;
+    }else{
+        isValid = false;
+    }
+    return isValid
+}
 
+const emailValidation = (emailAccount) => {
+    let filterEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let isValid = false
+    if(filterEmail.test(emailAccount)){
+        isValid = true;
+    }else{
+        isValid = false;
+    }
+    return isValid
+}
+
+const textValidation = (name) => {
+    var text = /^[a-zA-Z]/
+    let isValid = false;
+    if(text.test(name) && name.length > 5){
+        isValid = true;
+    }else{
+        isValid = false;
+    }
+    return isValid
+}
+// Hacemos un get - fetch de los usuarios
 const getEmployees = () => {
     fetch(api)
     .then(res => res.json())
@@ -105,28 +140,31 @@ const getFormValues = () => {
         'address': userAddress.value,
         'phone': userPhone.value
     };
-
     postEmployee(payload)
 }
 
 const postEmployee = payload => {
     event.preventDefault()
-
-    fetch( api, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        })
-        .then(res => res.json())
-        .then(res => {
-            toggleModal()
-            initialize()
-        })
-        .catch(error => {
-            // acá que ponemos?
-        });
+    const userEmail = document.getElementById('email').value;
+    const userName = document.getElementById('name').value;
+    if(formValidation(payload) && emailValidation(userEmail) && textValidation(userName)){
+        fetch( api, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(res => {
+                toggleModal()
+                initialize()
+            })
+            .catch(error=> console.log(error))
+                
+    }else{
+        alert('Please complete all the fields correctly')
+    }
 }
 
 // Editemos usuarios!
@@ -171,8 +209,29 @@ const closeDelete =()=>{
     hiddenDelete();
 }
 
-
-
+const searchValues = () => {
+    var input, filter, table, tr;
+    input = document.getElementById("filterInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tableBody");
+    tr = table.getElementsByTagName('tr');
+    for (let i = 0; i < tr.length; i++) {
+        let tdData = tr[i].getElementsByTagName("td");
+        let test = false;
+    for(let j = 0; j < tdData.length; j++){
+        let td = tdData[j];
+        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            test = true;
+        } 
+    }
+    if(test){
+        tr[i].style.display = "";
+    }
+    else {
+        tr[i].style.display = "none";
+    }
+  }
+}
 
 
 
