@@ -50,16 +50,36 @@ const formValidation = () => {
     let email = document.getElementById('email').value;
     let address = document.getElementById('address').value;
     let phone = document.getElementById('phone').value;
-    var filterEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    let isValid = false
+    let isValid = false;
     if(name !== '' && phone !== '' && address !== '' && email !== ''){
-        isValid = true
+        isValid = true;
     }else{
-        isValid = false
+        isValid = false;
     }
     return isValid
 }
 
+const emailValidation = (emailAccount) => {
+    let filterEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let isValid = false
+    if(filterEmail.test(emailAccount)){
+        isValid = true;
+    }else{
+        isValid = false;
+    }
+    return isValid
+}
+
+const textValidation = (name) => {
+    var text = /^[a-zA-Z]/
+    let isValid = false;
+    if(text.test(name) && name.length > 5){
+        isValid = true;
+    }else{
+        isValid = false;
+    }
+    return isValid
+}
 // Hacemos un get - fetch de los usuarios
 const getEmployees = () => {
     fetch(api)
@@ -125,8 +145,9 @@ const getFormValues = () => {
 
 const postEmployee = payload => {
     event.preventDefault()
-
-    if(formValidation(payload)){
+    const userEmail = document.getElementById('email').value;
+    const userName = document.getElementById('name').value;
+    if(formValidation(payload) && emailValidation(userEmail) && textValidation(userName)){
         fetch( api, {
                 method: 'POST',
                 headers: {
@@ -142,7 +163,7 @@ const postEmployee = payload => {
             .catch(error=> console.log(error))
                 
     }else{
-        alert('Please complete all the fields')
+        alert('Please complete all the fields properly')
     }
 }
 
