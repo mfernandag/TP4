@@ -76,26 +76,24 @@
                 <div id="modalBody" class="modalBody">
                     <div class="formGroup">
                         <label> Name </label>
-                        <input class="input" type="text" name="empName" id="name" required onKeyup="formCompleteValidation()" >
+                        <input class="input" type="text" name="empName" id="name" required >
                     </div>
                     <div class="formGroup">
                         <label> Email </label>
-                        <input class="input" type="email" name="empEmail" id="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" onKeyup="formCompleteValidation()">
+                        <input class="input" type="email" name="empEmail" id="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
                     </div>
                     <div class="formGroup">
                         <label> Address </label>
-                        <input class="input" type="text" name="empAddress" id="address" required onKeyup="formCompleteValidation()" >
+                        <input class="input" type="text" name="empAddress" id="address" required >
                     </div>
                     <div class="formGroup">
                         <label> Phone </label>
-                        <input class="input" type="number" name="empPhone" id="phone" required onKeyup="formCompleteValidation()" >
+                        <input class="input" type="number" name="empPhone" id="phone" required>
                     </div>
                 </div>
                 <div id="modalFooter" class="modalFooter">
-                    
                         <input type="button" value="Cancel" class="cancelBtn" onclick="toggleModal()">
-                        <input id="submitBtn" type="submit" value="Add" class="addBtn" disabled="disabled" onclick="getFormValues()">
-                    
+                        <input id="submitBtn" type="submit" value="Add" class="addBtn" onclick="getFormValues()">
                 </div>
             </form>
         </div>

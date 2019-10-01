@@ -45,58 +45,22 @@ const initialize = () => {
 }
 
 //para que solo haga el submit si todos los campos están completos
-
-const formCompleteValidation = () => {
-    let name, email, address, phone
-    name = document.getElementById('name');
-    email = document.getElementById('email');
-    address = document.getElementById('address');
-    phone = document.getElementById('phone');
-    var filterEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var text = /^[a-zA-Z]+$/
-    let canSubmit = true;
-    if(name.value == '' && email.value == '' && address.value == '' && phone.value == ''){
-        canSubmit = false;
-    }else{
-        document.getElementById('submitBtn').disabled = !canSubmit;
-    }
-    
-    if (!filterEmail.test(email.value)) {
-        document.getElementById('submitBtn').disabled = canSubmit;
-        return false;
-    }
-}
-
-const validateForm = () => {
+const formValidation = () => {
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let address = document.getElementById('address').value;
     let phone = document.getElementById('phone').value;
-    let isValid = 1;
-
-    if(name.length > 1 && email.length > 1 && address.length > 1 && phone.length > 1){
-        return false;
+    var filterEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let isValid = false
+    if(name !== '' && phone !== '' && address !== '' && email !== ''){
+        isValid = true
+    }else{
+        isValid = false
     }
-
-    let isOnlyText = /^[a-zA-Z]+$/.test(name);
-    if(!isOnlyText){
-        return false;
-    }
-
-    isValidEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-    if(!isValidEmail){
-        return false;
-    }
-
-    let isNumber = /^\d+$/.test(phone);
-    if(!isNumber){
-        return false
-    }
-    document.getElementById('form').Submit();
+    return isValid
 }
 
 // Hacemos un get - fetch de los usuarios
-
 const getEmployees = () => {
     fetch(api)
     .then(res => res.json())
@@ -162,21 +126,24 @@ const getFormValues = () => {
 const postEmployee = payload => {
     event.preventDefault()
 
-    fetch( api, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        })
-        .then(res => res.json())
-        .then(res => {
-            toggleModal()
-            initialize()
-        })
-        .catch(error => {
-            // acá que ponemos?
-        });
+    if(formValidation(payload)){
+        fetch( api, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(res => {
+                toggleModal()
+                initialize()
+            })
+            .catch(error=> console.log(error))
+                
+    }else{
+        alert('Please complete all the fields')
+    }
 }
 
 // Borremos usuarios :(
@@ -212,8 +179,6 @@ const closeDelete =()=>{
     const hiddenDelete=() => deleteModal.classList.add('hidden');
     hiddenDelete();
 }
-
-
 
 const searchValues = () => {
     var input, filter, table, tr;
