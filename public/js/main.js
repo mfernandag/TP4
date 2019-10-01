@@ -163,7 +163,7 @@ const postEmployee = payload => {
             .catch(error=> console.log(error))
                 
     }else{
-        alert('Please complete all the fields properly')
+        alert('Please complete all the fields correctly')
     }
 }
 
