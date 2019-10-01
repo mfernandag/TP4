@@ -50,9 +50,9 @@ const getUserByid = (req, res, next) => {
 };
 
 const deleteUser = (req, res, next) => {
-	let searchResult = users.find(e => e.id === req.params.id)
+	let userFound = users.find(e => e.id === req.params.id)
 	let index = users.findIndex(e => e.id === req.params.id)
-	if (searchResult) {
+	if (userFound) {
 		users.splice(index, 1)
 		res.status('200').json('Se eliminó al empleado :(')
 	} else {

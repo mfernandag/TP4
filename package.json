@@ -4,7 +4,7 @@
   "description": "Node/Express TP4",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,6 @@
     "uniqid": "5.0.3"
   },
   "devDependencies": {
-    "nodemon": "^1.19.2"
+    "nodemon": "1.19.2"
   }
 }

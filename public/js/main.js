@@ -79,7 +79,7 @@ const createTableElements = ({id, name, email, address, phone}) =>
         <img class="tableIcons" src="assets/images/edit.png">
         </a>
         <a class="delete" id="${id}" onclick="toggleDeleteModal()">
-        <img class="tableIcons" src="assets/images/delete.png" onClick="deleteUser(${id})">
+        <img class="tableIcons" src="assets/images/delete.png" onclick="deleteEmployee(${id})">
         </a>
     </td>
   </tr>
@@ -129,25 +129,33 @@ const postEmployee = payload => {
         });
 }
 
+// Editemos usuarios!
+// 1) Tomar el id del usuario
+// 2) Rellenar el modal con la informacion pre-cargada
+
+
+
 // Borremos usuarios :(
 
-const deleteUser = (id) => {
-     openDelete();
-      
-        const buttonDelete = document.querySelector('.delete');
-        buttonDelete.onclick = ()=>{
-          fetch(`${api}/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(res => res.json())
-        .then(res => {
-            document.getElementById(`user${id}`).remove()
-            closeDelete();
-          })
-        } 
+// 1) Tomamos el id del usuario
+// 2) La funcion que elimina al usuario debe usar ese mismo id
+// 3) Cerrar el modal
+// 4) Llamar a initialize para que se reimpriman los usuarios
+
+// ELIMINAR EMPLEADO
+const deleteEmployee = id => {
+    fetch(`${api}/${id}`, {
+        method: 'DELETE',
+        headers: {
+			'Content-Type': 'application/json'
+		}
+    })
+    .then(res => res.json())
+    .then(res => {
+        console.log(res)
+        toggleDeleteModal()
+        initialize()
+    })
 }
 
 // Modales

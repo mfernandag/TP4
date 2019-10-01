@@ -114,7 +114,7 @@
     <!--Edit modal-->
     <div id="editModalContainer" class="modalsContainer hidden"> 
         <div id="modalContent" class="modalContent">
-            <form id="form">
+            <form id="editForm">
                 <div id="modalHeader" class="modalHeader">
                     <h4 class="modalTitle"> Edit Employee</h4>
                     <a href="#" class="close" onclick="toggleEditModal()">
@@ -162,7 +162,6 @@
             <div class="delete-container">
               <div class="delete-top">
                 <h4 class="modal-title">Delete employee</h4>
-                <!--<p class="close" onClick="closeDelete()">x</div>-->
                 <a href="#" class="close" onclick="toggleDeleteModal()">
                     <i class="fas fa-times"></i>
                 </a>
@@ -171,7 +170,7 @@
                   <p class="deleteSubtitle">This action cannot be undone.</p>
                   <div class="delete-footer">
                     <div class="cancel" onclick="toggleDeleteModal()">Cancel</div>
-                    <div class="delete"> Delete</div> 
+                    <div class="delete" onclick="deleteEmployee()"> Delete</div> 
                   </div>                    
               </div>
         </div>
