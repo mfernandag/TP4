@@ -6,12 +6,21 @@ const router = express.Router();
 
 // PAGES ROUTES //
 router.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '../pages/index.html'));
+	res.sendFile(path.join(__dirname, '../pages/realIndex.html'));
 });
 
-router.get('/home', (req, res) => {
+router.get('/employees', (req, res) => {
 	res.sendFile(path.join(__dirname, '../pages/index.html'))
 })
+
+router.get('/sales', (req, res) => {
+	res.sendFile(path.join(__dirname, '../pages/sales.html'))
+})
+
+router.get('/reports', (req, res) => {
+	res.sendFile(path.join(__dirname, '../pages/reportes.html'))
+})
+
 
 // API ROUTES //
 

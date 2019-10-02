@@ -1,0 +1,565 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+  font-family: 'Varela Round', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Varela Round', sans-serif;
+  background: url("../images/universe.jpg") no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 80px;
+}
+
+body header {
+  background-color: #fff;
+  display: block;
+  padding: 20px 0px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+body header nav {
+  text-align: center;
+}
+
+body header nav .brand {
+  color: #393636;
+  font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 4%;
+}
+
+body header nav .logo {
+  width: 30px;
+  height: 30px;
+  padding: 0px 20px;
+}
+
+.section-best {
+  margin: 50px auto;
+  padding: 0 30px;
+  background-color: rgba(255, 255, 255, 0.671);
+  position: relative;
+}
+
+.section-best .seller-month {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.section-best .seller-month .seller-text {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  padding: 20px 20px;
+  margin: 10px 10px;
+}
+
+.section-best .seller-month .seller-text .seller-main-text {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 6%;
+}
+
+.section-best .seller-month .seller-text #best-component {
+  display: block;
+}
+
+.section-sales {
+  margin: 50px auto;
+  width: 90%;
+}
+
+.section-sales .action-buttons {
+  text-align: center;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.section-sales .action-buttons a {
+  background-color: #00CF95;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.section-sales .action-buttons a:hover {
+  background-color: #FFFFFF;
+  color: #00CF95;
+}
+
+.sellers {
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+.sellers .categories {
+  background-color: rgba(255, 255, 255, 0.671);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.sellers .categories li {
+  text-align: center;
+  width: 20%;
+  margin: 0 15px;
+}
+
+.sellers .sells {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 10px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-weight: normal;
+}
+
+.reports-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reports-title .rep {
+  color: #00CF95;
+  padding: 10px 60px;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.back-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4%;
+}
+
+@media only screen and (max-width: 940px) {
+  .back-btn {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .back-btn {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.back-btn .back {
+  background-color: #00CF95;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.back-btn .back:hover {
+  background-color: #FFFFFF;
+  color: #00CF95;
+}
+
+.reports {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  max-width: 80%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 940px) {
+  .reports {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .reports {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 70%;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .reports {
+    max-width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.reports p.reportbox-title {
+  font-size: 140%;
+  margin-bottom: 4%;
+  text-shadow: 0 0 2px #582066;
+}
+
+.reports .month-report {
+  background-color: white;
+  height: 300px;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 0px;
+          flex: 2 1 0;
+}
+
+@media only screen and (max-width: 940px) {
+  .reports .month-report {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .reports .month-report {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .reports .month-report {
+    width: 80%;
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .reports .month-report {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}
+
+.reports .month-report p.report-info {
+  margin-top: 5%;
+}
+
+.reports .sub-report {
+  background-color: white;
+  height: 300px;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 0px;
+          flex: 2 1 0;
+  margin-left: 2%;
+}
+
+@media only screen and (max-width: 940px) {
+  .reports .sub-report {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .reports .sub-report {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .reports .sub-report {
+    width: 80%;
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .reports .sub-report {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .reports .sub-report {
+    margin-left: 0;
+  }
+}
+
+.reports .sub-report p.report-info {
+  margin-top: 2%;
+}
+
+.reports .mix-report {
+  background-color: white;
+  height: 300px;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 2%;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 0px;
+          flex: 3 1 0;
+}
+
+@media only screen and (max-width: 940px) {
+  .reports .mix-report {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .reports .mix-report {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .reports .mix-report {
+    width: 80%;
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .reports .mix-report {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .reports .mix-report {
+    margin-left: 0;
+  }
+}
+
+.reports .mix-report p.report-info {
+  margin-top: 5%;
+}
+
+.modal {
+  display: none;
+}
+
+.activeModal {
+  background-color: rgba(144, 194, 253, 0.6);
+  width: 100%;
+  top: 0;
+  position: fixed;
+}
+
+.activeModal .contain-modal-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.activeModal .modal-select {
+  background-color: #FFFFFF;
+  width: 40%;
+  padding: 50px 20px;
+}
+
+.activeModal .modal-select .closeModal {
+  float: right;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.activeModal .modal-select .closeModal:hover {
+  cursor: pointer;
+}
+
+.activeModal .modal-select .modal-select-text {
+  text-align: center;
+}
+
+.activeModal .modal-select .selectors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px auto;
+}
+
+.activeModal .modal-select select {
+  margin: 5px auto;
+  width: 90%;
+  height: 25px;
+}
+
+.activeModal .modal-select .container-add {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.activeModal .modal-select .container-add #add {
+  width: 100%;
+  background-color: #00CF95;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #46687e;
+}
+
+.activeModal .modal-select .container-add #add:hover {
+  background-color: #FFFFFF;
+  color: #00CF95;
+}
+
+.activeModal .modal-select .container-confirm {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.activeModal .modal-select .container-confirm #button {
+  float: right;
+  width: 100%;
+  background-color: #00CF95;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.activeModal .modal-select .container-confirm #button:hover {
+  background-color: #FFFFFF;
+  color: #00CF95;
+}
+
+.pendingSales {
+  margin: 5px auto;
+  width: 90%;
+}
+
+.pendingSales p {
+  margin-bottom: 0.5em;
+}
+/*# sourceMappingURL=stylesSales.css.map */

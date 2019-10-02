@@ -1,0 +1,96 @@
+body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header {
+  width: 100%;
+}
+
+header .indexMenu {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+}
+
+header .indexMenu .menuWrapper {
+  width: 50%;
+  height: 100%;
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .indexMenu .menuWrapper .navLink {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+}
+
+header .indexMenu .menuWrapper .navLink:hover {
+  text-underline-position: under;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #00CF95;
+          text-decoration-color: #00CF95;
+}
+
+.titleContainer {
+  width: 100%;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.titleContainer .titleWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.titleContainer .titleWrapper .pageTitle {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 50px;
+  font-weight: bold;
+  color: #582066;
+  letter-spacing: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 45px;
+}
+
+.titleContainer .titleWrapper .logo img {
+  width: 100px;
+}
+/*# sourceMappingURL=index.css.map */
