@@ -43,9 +43,6 @@ $mobile: 420px;
 $tablet: 700px;
 $first: 940px;
 
-
-
-
 *{
     margin: 0;
     padding: 0;
@@ -68,7 +65,7 @@ body{
     background-size: cover;
     padding-top: 80px;
     header{
-        background-color: #fff;
+        background-color: #e3e3e3;
         display: block;
         padding: 20px 0px;;
         width: 100%;
@@ -85,6 +82,9 @@ body{
                 text-align: center;
                 text-decoration: none;
                 padding:4%;
+                span{
+                    font-family: 'Audiowide', cursive;
+                }
             }
             .logo{
                 width: 30px;
