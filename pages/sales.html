@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="assets/js/salesMain.js" type="text/javascript"></script>
+    <link href="assets/styles/stylesSales.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One|Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel='icon' href="assets/images/cart.ico" type="image/x-icon">
+    <title>Conifer Shop Data</title>
+</head>
+<body onload="onLoadFunctions()">
+    <header>
+        <nav>
+            <a href="/" class="brand"><span>ConiFer</span><img src="assets/images/logo.png" class="logo"> Sales management</a>
+        </nav>
+    </header>
+    <section class="section-best">
+        <div class="seller-month">
+            <div class="seller-text"><img src="assets/images/natsha.png" alt="seller-month-picture"></div>
+            <div class="seller-text"> 
+                <p class="seller-main-text">¡Felicitaciones: &nbsp<p id="best-seller"> </p>!</p>
+                <span>Vendedora estrella</span>
+            </div>
+            <div class="seller-text">
+                <p class="seller-main-text">$<p id="sales-seller"></p></p>
+                <span>Vendido por nuestra vendedora estrella</span>
+            </div>
+           <div class="seller-text">
+               <p class="seller-main-text">¡Felicitaciones, Devices Shop &nbsp<p id="best-subsidiary"></p>!</p>
+               <span>Sucursal del mes</span>
+           </div>
+           <div class="seller-text">
+               <p class="seller-main-text">$<p id="sales-subsidiary"></p></p>
+               <span>Lo más vendido por la sucursal del mes!</span>
+           </div>
+           <div class="seller-text">
+               <p class="seller-main-text" id="best-component"></p>
+               <span>Producto estrella</span>
+           </div>
+        </div>
+    </section>
+    <section class="section-sales">
+        <div class="action-buttons">
+            <div onclick="modal()" class="new-sale" >
+                <a id="newSaleBtn" class="newSale" href="#">Nueva Venta</a>
+            </div>   
+            <div class="report-btn">
+                <a href="/reports">Reportes</a>
+            </div>
+            <div class="new-sale">
+                <a href="/">Volver a Home </a>
+            </div>
+        </div>
+        <div class="sellers">
+            <ul class="categories">
+                <li>Fecha</li>
+                <li>Sucursal</li>
+                <li>Vendedora</li>
+                <li>Componentes</li>
+                <li>Total</li>
+            </ul>
+        </div>
+        <div class="sellers" id="allSales"></div>   
+    </section>
+    <section class="modal" id="activeModal" >
+        <div class="contain-modal-select">
+            <div class="modal-select">
+                <a class="closeModal" onclick="closeModal()">x</a>
+                <p class="modal-select-text">Seleccione</p>
+                <div class="selectors" id="modal"></div>
+                <div class="container-add">
+                    <button onclick="addComponent()" type="button" id="add">Agregar componente</button>
+                </div>
+                <div id="pendingSales" class="pendingSales"></div>
+                <div class="container-confirm">
+                    <button type="button" id="button" onclick="addNewSale()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

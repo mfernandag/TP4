@@ -1,6 +1,22 @@
 @import 'modal.scss';
+@import 'index.scss';
 
+//breakpoint
 $mobile: 420px;
+
+//colors
+$purple: #582066;
+$neonGreen: #00CF95;
+$hoverPurple: #47416F;
+$backgroundGrey: #F0F0F0;
+$hoverGrey: #d6d6d6;
+
+@mixin to-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
@@ -25,14 +41,21 @@ body{
     background-image: url('../images/universe.jpg');
     background-color: black;
     color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    @include to-center();
+    .backBtn{
+        justify-content: flex-end;
+        .backLink{
+            color: White;
+            text-decoration: none;
+            background-color: #00CF95;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+    }
 }
-
+ 
 .container{
-    background-color: #F0F0F0;
+    background-color: $backgroundGrey;
     margin-top: 5%;
     margin-bottom: 50px;
     width: 85%;
@@ -42,11 +65,9 @@ body{
     header{
         width: 100%;
         .titleWraper{
-            background: linear-gradient(to right, #582066, #00CF95);
+            background: linear-gradient(to right, $purple, $neonGreen);
             height: 70px;
-            display: flex;
-            text-align: center;
-            align-items: center;
+            @include to-center();
             padding: 0px 40px;
             @media only screen and (max-width: $mobile){
                 padding: 0px 20px;
@@ -81,10 +102,7 @@ body{
                     padding: 8px 15px;
                     border-radius: 4px;
                     color: white;
-                    display: flex;
-                    justify-content: center;
-                    text-align: center;
-                    align-items: center;
+                    @include to-center();
                     text-decoration: none;
                     align-items: center;
                     @media only screen and (max-width: $mobile) {
@@ -104,10 +122,7 @@ body{
                         }
                     }
                     &:hover{
-                        background-color: #47416F;
-                    }
-                    @media only screen and (max-width: $mobile) {
-
+                        background-color: $hoverPurple;
                     }
                 }
             }
@@ -171,7 +186,7 @@ body{
             font-size: 14px;
             tr{
                 &:hover{
-                    background-color: #d6d6d6;
+                    background-color: $hoverGrey;
                 }
                 td{
                     padding: 15px 20px 15px 0px;
@@ -197,12 +212,9 @@ body{
 }
 
 .errorContainer{
-    background-color: #F0F0F0;
+    background-color: $backgroundGrey;
     padding: 60px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    @include to-center();
     .errorImg{
         img{
             width: 250px;
