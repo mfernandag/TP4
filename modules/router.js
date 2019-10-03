@@ -28,6 +28,7 @@ router.get('/api/users', users.getUser);
 router.get('/api/users/:id', users.getUserByid);
 router.post('/api/users', users.postUser);
 router.delete('/api/users/:id', users.deleteUser);
+router.patch('/api/users/:id', users.patchUser)
 
 
 // NOT FOUNS HANDLER //
