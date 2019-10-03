@@ -20,8 +20,9 @@ const patchUser = (req, res, next) => {
 	});
 	if (resUser) {
 		let editedUser = { ...resUser, ...data };
-		user.splice(1, index);
-		user.push(editedUser);
+		users.splice(1, index);
+		users.push(editedUser);
+		res.status('201').json('Usuario editado')
 	} else {
 		res.status(404).send('no encontramos al usuario');
 	}
