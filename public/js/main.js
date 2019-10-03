@@ -189,7 +189,7 @@ const fillEditModal = data => {
     phone.value = data.phone;
 }
 
-// EDITAR EMPLEADOS
+// Editar usuarios efectivamente
 const editEmployee = id => {
     const editForm = document.getElementById('editForm')
     const {name, email, address, phone} = editForm
@@ -209,7 +209,7 @@ const editEmployee = id => {
         })
             .then(res => res.json())
             .then(res => {
-                console.log(res);
+               // console.log(res);
                 toggleEditModal(id)
                 getEmployees()
             })

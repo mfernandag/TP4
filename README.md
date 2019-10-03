@@ -1,9 +1,7 @@
 Consigna: https://github.com/Ada-IT/bootcamp-frontend/tree/master/trabajos-practicos/tp-4
 
-El uniq id funciona asi:
-var uniqid = require('uniqid');
- 
-console.log(uniqid()); // -> 4n5pxq24kpiob12og9
-console.log(uniqid(), uniqid()); // -> 4n5pxq24kriob12ogd, 4n5pxq24ksiob12ogl
+Para hacer correr el servidor:
+1) npm install
+2) npm run start
 
-Para mas documentacion: https://www.npmjs.com/package/uniqid
+La consigna resuelta se encuentra en el item EMPLOYEES del nav.
