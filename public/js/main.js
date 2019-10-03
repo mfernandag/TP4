@@ -180,13 +180,13 @@ const postEmployee = payload => {
 // 2) Rellenar el modal con la informacion pre-cargada
 
 const fillEditModal = data => {
-    const form = document.getElementById('editForm')
+    let form = document.getElementById('editForm')
     const {name, email, address, phone} = form
 
-    name.value = data.name
-    email.value = data.email
-    address.value = data.address
-    phone.value = data.phone
+    name.value = data.name;
+    email.value = data.email;
+    address.value = data.address;
+    phone.value = data.phone;
 }
 
 // EDITAR EMPLEADOS
